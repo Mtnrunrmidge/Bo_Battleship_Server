@@ -1,3 +1,6 @@
+import java.util.*;
+import java.lang.*;
+
 public class Player {
 
     private Gameboard gameboard;
@@ -5,12 +8,12 @@ public class Player {
     private Fleet fleet;
     private String username;
     private String ipAddress;
-    private bool isTurn;
+    private boolean isTurn;
 
     /**
      * Constructor for player object
      */
-    public Player(String username, Gameboard gameboard, GuessesByPlayer guessesBoard, Fleet fleet, bool isTurn){
+    public Player(String username, Gameboard gameboard, GuessesByPlayer guessesBoard, Fleet fleet, boolean isTurn){
         setUsername(username);
         setGameboard(gameboard);
         setGuessesByPlayerBoard(guessesBoard);
@@ -56,7 +59,7 @@ public class Player {
      * Gets the true/false if its the player's turn.
      * @return
      */
-    public bool getIsTurn(){
+    public boolean getIsTurn(){
         return this.isTurn;
     }
 
@@ -98,7 +101,7 @@ public class Player {
      * Sets whether or not it is the player's turn
      * @param isTurn
      */
-    public void setIsTurn(bool isTurn){
+    public void setIsTurn(boolean isTurn){
         this.isTurn = isTurn;
     }
 
