@@ -13,12 +13,13 @@ public class Player {
     /**
      * Constructor for player object
      */
-    public Player(String username, Gameboard gameboard, GuessesByPlayer guessesBoard, Fleet fleet, boolean isTurn){
+    public Player(String username, Gameboard gameboard, GuessesByPlayer guessesBoard, Fleet fleet, boolean isTurn, String ipAddress){
         setUsername(username);
         setGameboard(gameboard);
         setGuessesByPlayerBoard(guessesBoard);
         setFleet(fleet);
         setIsTurn(isTurn);
+        setIPAddress(ipAddress);
     }
 
     //getters
@@ -63,6 +64,14 @@ public class Player {
         return this.isTurn;
     }
 
+    /**
+     * Get the ipaddress for the player
+     * @return
+     */
+    public String getIPAddress(){
+        return this.ipAddress;
+    }
+
     //setters
 
     /**
@@ -103,6 +112,14 @@ public class Player {
      */
     public void setIsTurn(boolean isTurn){
         this.isTurn = isTurn;
+    }
+
+    /**
+     * set the player's ipaddress
+     * @param ipAddress
+     */
+    public void setIPAddress(String ipAddress){
+        this.ipAddress = ipAddress;
     }
 
 }
