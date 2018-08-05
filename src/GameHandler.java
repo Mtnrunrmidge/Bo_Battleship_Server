@@ -13,5 +13,5 @@ public class GameHandler {
     public GuessesByPlayer player1Guesses;
     public GuessesByPlayer player2Guesses;
 
-    
+
 }
