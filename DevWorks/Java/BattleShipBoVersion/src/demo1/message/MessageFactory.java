@@ -1,0 +1,54 @@
+package demo1.message;
+
+import demo1.GridType;
+
+public class MessageFactory {
+
+    public static LoginMessage getLoginMessage(String username) {
+        return new LoginMessage(username);
+    }
+
+    // result sent from server to the attacker
+    public static ResultMessage getResultMessage(String username, GridType[] gt, int row, int col) {
+        return new ResultMessage(username, gt, row, col);
+    }
+
+    // Game message to the attackee, board to ensure integrity
+    public static GameActionMessage getGameActionMessage(String username, GridType[] gt, int row, int col, GridType[][] board) {
+        return new GameActionMessage(username, gt, row, col, board);
+    }
+
+    public static GridStatusMessage getAttemptMessage(String username, int row, int col) {
+        return (GridStatusMessage) GridStatusMessage.getAttemptMessage(username, row, col);
+    }
+
+    public static ChatMessage getChatMessage(String text) {
+        return new ChatMessage(text);
+    }
+
+    public static ChatMessage getChatMessage(String username, String text) {
+        return new ChatMessage(username, text);
+    }
+
+    // ready to play signal from client to server
+    public static SystemMessage getReadyMessage(GridType[][] gt) {
+        return SystemMessage.getReadyMessage(gt);
+    }
+
+    // start game signal from server to clients
+    public static SystemMessage getStartMessage() {
+        return SystemMessage.getStartMessage();
+    }
+
+    public static SystemMessage getAckMessage() {
+        return SystemMessage.getAckMessage();
+    }
+
+    public static SystemMessage getDenyMessage() {
+        return SystemMessage.getDenyMessage();
+    }
+
+    public static SystemMessage getGameOverMessage(String winner) {
+        return SystemMessage.getGameOverMessage(winner);
+    }
+}
